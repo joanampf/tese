@@ -1,42 +1,87 @@
-intent-filter 
+android.permission.ACCESS_COARSE_LOCATION
+android.permission.ACCESS_FINE_LOCATION
+android.permission.ACCESS_NETWORK_STATE
+android.permission.ACCESS_WIFI_STATE
+android.permission.AUTHENTICATE_ACCOUNTS
+android.permission.BLUETOOTH
+android.permission.BROADCAST_STICKY
+android.permission.CAMERA
+android.permission.CHANGE_WIFI_STATE
+android.permission.GET_ACCOUNTS
+android.permission.GET_TASKS
+android.permission.INSTALL_SHORTCUT
+android.permission.INTERNET
+android.permission.MANAGE_ACCOUNTS
+android.permission.MODIFY_AUDIO_SETTINGS
+android.permission.READ_CONTACTS
+android.permission.READ_PHONE_STATE
+android.permission.READ_PROFILE
+android.permission.READ_SYNC_SETTINGS
+android.permission.READ_SYNC_STATS
+android.permission.RECEIVE_BOOT_COMPLETED
+android.permission.RECEIVE_SMS
+android.permission.RECORD_AUDIO
+android.permission.SEND_SMS
+android.permission.USE_CREDENTIALS
+android.permission.VIBRATE
+android.permission.WAKE_LOCK
+android.permission.WRITE_CONTACTS
+android.permission.WRITE_EXTERNAL_STORAGE
+android.permission.WRITE_SETTINGS
+android.permission.WRITE_SYNC_SETTINGS
+com.android.launcher.permission.INSTALL_SHORTCUT
+com.android.launcher.permission.UNINSTALL_SHORTCUT
+com.android.vending.BILLING
+com.google.android.c2dm.permission.RECEIVE
+com.google.android.providers.gsf.permission.READ_GSERVICES
+com.sec.android.provider.badge.permission.READ
+com.sec.android.provider.badge.permission.WRITE
+com.htc.launcher.permission.READ_SETTINGS
+com.htc.launcher.permission.UPDATE_SHORTCUT
+com.sonyericsson.home.permission.BROADCAST_BADGE
+com.whatsapp.permission.BROADCAST
+com.whatsapp.permission.C2D_MESSAGE
+com.whatsapp.permission.MAPS_RECEIVE
+com.whatsapp.permission.VOIP_CALL
+
                 <action xmlns:android="http://schemas.android.com/apk/res/android" android:name="android.intent.action.MAIN"/>
                 <category xmlns:android="http://schemas.android.com/apk/res/android" android:name="android.intent.category.LAUNCHER"/>
                 <category xmlns:android="http://schemas.android.com/apk/res/android" android:name="android.intent.category.MULTIWINDOW_LAUNCHER"/>
             
-intent-filter 
-intent-filter 
+
+
                 <action xmlns:android="http://schemas.android.com/apk/res/android" android:name="android.intent.action.SENDTO"/>
                 <category xmlns:android="http://schemas.android.com/apk/res/android" android:name="android.intent.category.DEFAULT"/>
                 <category xmlns:android="http://schemas.android.com/apk/res/android" android:name="android.intent.category.BROWSABLE"/>
                 <data xmlns:android="http://schemas.android.com/apk/res/android" android:scheme="sms"/>
                 <data xmlns:android="http://schemas.android.com/apk/res/android" android:scheme="smsto"/>
             
-intent-filter 
-intent-filter 
+
+
                 <action xmlns:android="http://schemas.android.com/apk/res/android" android:name="android.intent.action.ATTACH_DATA"/>
                 <category xmlns:android="http://schemas.android.com/apk/res/android" android:name="android.intent.category.DEFAULT"/>
                 <data xmlns:android="http://schemas.android.com/apk/res/android" android:mimeType="image/*"/>
             
-intent-filter 
-intent-filter 
+
+
                 <action xmlns:android="http://schemas.android.com/apk/res/android" android:name="android.intent.action.VIEW"/>
                 <category xmlns:android="http://schemas.android.com/apk/res/android" android:name="android.intent.category.DEFAULT"/>
                 <category xmlns:android="http://schemas.android.com/apk/res/android" android:name="android.intent.category.BROWSABLE"/>
                 <data xmlns:android="http://schemas.android.com/apk/res/android" android:host="r" android:scheme="whatsapp"/>
             
-intent-filter 
-intent-filter 
+
+
                 <action xmlns:android="http://schemas.android.com/apk/res/android" android:name="android.intent.action.MAIN"/>
                 <category xmlns:android="http://schemas.android.com/apk/res/android" android:name="android.intent.category.NOTIFICATION_PREFERENCES"/>
             
-intent-filter 
-intent-filter 
+
+
                 <action xmlns:android="http://schemas.android.com/apk/res/android" android:name="android.intent.action.PICK"/>
                 <category xmlns:android="http://schemas.android.com/apk/res/android" android:name="android.intent.category.DEFAULT"/>
                 <category xmlns:android="http://schemas.android.com/apk/res/android" android:name="com.whatsapp"/>
             
-intent-filter 
-intent-filter 
+
+
                 <action xmlns:android="http://schemas.android.com/apk/res/android" android:name="android.intent.action.SEND"/>
                 <category xmlns:android="http://schemas.android.com/apk/res/android" android:name="android.intent.category.DEFAULT"/>
                 <data xmlns:android="http://schemas.android.com/apk/res/android" android:mimeType="audio/*"/>
@@ -52,125 +97,125 @@ intent-filter
                 <data xmlns:android="http://schemas.android.com/apk/res/android" android:mimeType="application/vnd.ms-excel"/>
                 <data xmlns:android="http://schemas.android.com/apk/res/android" android:mimeType="application/vnd.ms-powerpoint"/>
             
-intent-filter 
-intent-filter 
+
+
                 <action xmlns:android="http://schemas.android.com/apk/res/android" android:name="android.intent.action.SEND_MULTIPLE"/>
                 <category xmlns:android="http://schemas.android.com/apk/res/android" android:name="android.intent.category.DEFAULT"/>
                 <data xmlns:android="http://schemas.android.com/apk/res/android" android:mimeType="audio/*"/>
                 <data xmlns:android="http://schemas.android.com/apk/res/android" android:mimeType="video/*"/>
                 <data xmlns:android="http://schemas.android.com/apk/res/android" android:mimeType="image/*"/>
             
-intent-filter 
-intent-filter 
+
+
                 <action xmlns:android="http://schemas.android.com/apk/res/android" android:name="android.intent.action.VIEW"/>
                 <category xmlns:android="http://schemas.android.com/apk/res/android" android:name="android.intent.category.DEFAULT"/>
                 <category xmlns:android="http://schemas.android.com/apk/res/android" android:name="android.intent.category.BROWSABLE"/>
                 <data xmlns:android="http://schemas.android.com/apk/res/android" android:host="send" android:scheme="whatsapp"/>
             
-intent-filter 
-intent-filter 
+
+
                 <action xmlns:android="http://schemas.android.com/apk/res/android" android:name="android.intent.action.CREATE_SHORTCUT"/>
             
-intent-filter 
-intent-filter 
+
+
                 <action xmlns:android="http://schemas.android.com/apk/res/android" android:name="com.whatsapp.intent.action.SET_WALLPAPER"/>
                 <category xmlns:android="http://schemas.android.com/apk/res/android" android:name="android.intent.category.DEFAULT"/>
             
-intent-filter 
-intent-filter 
+
+
                 <action xmlns:android="http://schemas.android.com/apk/res/android" android:name="com.whatsapp.intent.action.RESET_WALLPAPER"/>
                 <category xmlns:android="http://schemas.android.com/apk/res/android" android:name="android.intent.category.DEFAULT"/>
             
-intent-filter 
-intent-filter 
+
+
                 <action xmlns:android="http://schemas.android.com/apk/res/android" android:name="com.whatsapp.intent.action.DEFAULT_WALLPAPER"/>
                 <category xmlns:android="http://schemas.android.com/apk/res/android" android:name="android.intent.category.DEFAULT"/>
             
-intent-filter 
-intent-filter 
+
+
                 <action xmlns:android="http://schemas.android.com/apk/res/android" android:name="com.whatsapp.intent.action.RESET_GROUP_PHOTO"/>
                 <category xmlns:android="http://schemas.android.com/apk/res/android" android:name="android.intent.category.DEFAULT"/>
             
-intent-filter 
-intent-filter 
+
+
                 <action xmlns:android="http://schemas.android.com/apk/res/android" android:name="com.whatsapp.intent.action.RESET_PROFILE_PHOTO"/>
                 <category xmlns:android="http://schemas.android.com/apk/res/android" android:name="android.intent.category.DEFAULT"/>
             
-intent-filter 
-intent-filter 
+
+
                 <action xmlns:android="http://schemas.android.com/apk/res/android" android:name="com.whatsapp.intent.action.REMOVE_SCREENSHOT"/>
                 <category xmlns:android="http://schemas.android.com/apk/res/android" android:name="android.intent.category.DEFAULT"/>
             
-intent-filter 
-intent-filter 
+
+
                 <action xmlns:android="http://schemas.android.com/apk/res/android" android:name="com.whatsapp.intent.action.SAVE_PHOTO"/>
                 <category xmlns:android="http://schemas.android.com/apk/res/android" android:name="android.intent.category.DEFAULT"/>
             
-intent-filter 
-intent-filter 
+
+
                 <action xmlns:android="http://schemas.android.com/apk/res/android" android:name="com.whatsapp.action.WHATSAPP_RECORDING"/>
                 <category xmlns:android="http://schemas.android.com/apk/res/android" android:name="android.intent.category.DEFAULT"/>
                 <data xmlns:android="http://schemas.android.com/apk/res/android" android:mimeType="audio/*"/>
             
-intent-filter 
-intent-filter 
+
+
                 <action xmlns:android="http://schemas.android.com/apk/res/android" android:name="android.intent.action.VIEW"/>
             
-intent-filter 
-intent-filter 
+
+
                 <action xmlns:android="http://schemas.android.com/apk/res/android" android:name="android.intent.action.VIEW"/>
                 <category xmlns:android="http://schemas.android.com/apk/res/android" android:name="android.intent.category.DEFAULT"/>
                 <data xmlns:android="http://schemas.android.com/apk/res/android" android:mimeType="vnd.android.cursor.item/vnd.com.whatsapp.profile"/>
                 <data xmlns:android="http://schemas.android.com/apk/res/android" android:mimeType="vnd.android.cursor.item/vnd.com.whatsapp.voip.call"/>
             
-intent-filter 
-intent-filter 
+
+
                 <action xmlns:android="http://schemas.android.com/apk/res/android" android:name="com.whatsapp.intent.action.SEARCH_PHOTO"/>
                 <category xmlns:android="http://schemas.android.com/apk/res/android" android:name="android.intent.category.DEFAULT"/>
             
-intent-filter 
-intent-filter 
+
+
                 <action xmlns:android="http://schemas.android.com/apk/res/android" android:name="android.intent.action.VIEW"/>
                 <category xmlns:android="http://schemas.android.com/apk/res/android" android:name="android.intent.category.DEFAULT"/>
             
-intent-filter 
-intent-filter 
+
+
                 <action xmlns:android="http://schemas.android.com/apk/res/android" android:name="android.intent.action.SEARCH"/>
             
-intent-filter 
-intent-filter 
+
+
                 <action xmlns:android="http://schemas.android.com/apk/res/android" android:name="android.intent.action.VIEW"/>
                 <category xmlns:android="http://schemas.android.com/apk/res/android" android:name="android.intent.category.DEFAULT"/>
             
-intent-filter 
-intent-filter 
+
+
                 <action xmlns:android="http://schemas.android.com/apk/res/android" android:name="android.intent.action.SEARCH"/>
             
-intent-filter 
-intent-filter 
+
+
                 <action xmlns:android="http://schemas.android.com/apk/res/android" android:name="android.intent.action.CREATE_SHORTCUT"/>
             
-intent-filter 
-intent-filter 
+
+
                 <action xmlns:android="http://schemas.android.com/apk/res/android" android:name="com.google.android.voicesearch.SEND_MESSAGE_TO_CONTACTS"/>
                 <category xmlns:android="http://schemas.android.com/apk/res/android" android:name="android.intent.category.DEFAULT"/>
                 <data xmlns:android="http://schemas.android.com/apk/res/android" android:mimeType="text/plain"/>
             
-intent-filter 
-intent-filter 
+
+
                 <action xmlns:android="http://schemas.android.com/apk/res/android" android:name="android.intent.action.BOOT_COMPLETED"/>
             
-intent-filter 
-intent-filter 
+
+
                 <action xmlns:android="http://schemas.android.com/apk/res/android" android:name="android.intent.action.PACKAGE_REPLACED"/>
                 <data xmlns:android="http://schemas.android.com/apk/res/android" android:scheme="package"/>
             
-intent-filter 
-intent-filter 
+
+
                 <action xmlns:android="http://schemas.android.com/apk/res/android" android:name="android.intent.action.MY_PACKAGE_REPLACED"/>
             
-intent-filter 
-intent-filter 
+
+
                 <action xmlns:android="http://schemas.android.com/apk/res/android" android:name="android.intent.action.MEDIA_BAD_REMOVAL"/>
                 <action xmlns:android="http://schemas.android.com/apk/res/android" android:name="android.intent.action.MEDIA_EJECT"/>
                 <action xmlns:android="http://schemas.android.com/apk/res/android" android:name="android.intent.action.MEDIA_MOUNTED"/>
@@ -179,38 +224,38 @@ intent-filter
                 <action xmlns:android="http://schemas.android.com/apk/res/android" android:name="android.intent.action.MEDIA_UNMOUNTED"/>
                 <data xmlns:android="http://schemas.android.com/apk/res/android" android:scheme="file"/>
             
-intent-filter 
-intent-filter 
+
+
                 <action xmlns:android="http://schemas.android.com/apk/res/android" android:name="com.whatsapp.accountsync.intent.PERFORM_SYNC"/>
             
-intent-filter 
-intent-filter 
+
+
                 <action xmlns:android="http://schemas.android.com/apk/res/android" android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
             
-intent-filter 
-intent-filter 
+
+
                 <action xmlns:android="http://schemas.android.com/apk/res/android" android:name="com.google.android.c2dm.intent.RECEIVE"/>
                 <action xmlns:android="http://schemas.android.com/apk/res/android" android:name="com.google.android.c2dm.intent.REGISTRATION"/>
                 <category xmlns:android="http://schemas.android.com/apk/res/android" android:name="com.whatsapp"/>
             
-intent-filter 
-intent-filter 
+
+
                 <action xmlns:android="http://schemas.android.com/apk/res/android" android:name="android.accounts.AccountAuthenticator"/>
             
-intent-filter 
-intent-filter 
+
+
                 <action xmlns:android="http://schemas.android.com/apk/res/android" android:name="android.content.SyncAdapter"/>
             
-intent-filter 
-intent-filter 
+
+
                 <action xmlns:android="http://schemas.android.com/apk/res/android" android:name="com.google.android.c2dm.intent.RECEIVE"/>
             
-intent-filter 
-intent-filter 
+
+
                 <action xmlns:android="http://schemas.android.com/apk/res/android" android:name="com.google.android.gms.iid.InstanceID"/>
             
-intent-filter 
-intent-filter 
+
+
                 <action xmlns:android="http://schemas.android.com/apk/res/android" android:name="android.service.chooser.ChooserTargetService"/>
             
-intent-filter 
+

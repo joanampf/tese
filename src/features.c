@@ -2,9 +2,9 @@
 /*	features.c intents to process all the	
 	necessary features from the xml to be 
 	considered to post avaliation			*/
-#include <stdio.h>
-#include <libxml/xmlreader.h>
+#include "../inc/features.h"
 
+xmlChar *filename;
 
 /*	Its important to analyse INTENT-FILTER.
 	Contained in:
@@ -23,6 +23,10 @@ void process_intentfilter(xmlTextReaderPtr reader,const xmlChar *name){
 	
 }
 
-void process_usespermission(){
+void process_usespermission(xmlTextReaderPtr reader,const xmlChar *name){
+	saveToFile(name, xmlTextReaderGetAttribute(reader,"android:name"));
+}
 
+void process_manifest(reader){
+	filename = xmlTextReaderGetAttribute(reader,"package");
 }

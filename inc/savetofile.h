@@ -2,7 +2,8 @@
 #define SAVETOFILE_H_INCLUDED
 
 #include <libxml/xmlreader.h>
+#include <stdio.h>
 
-void saveToFile(const xmlChar* name, const xmlChar* attribute);
+void saveToFile(const xmlChar* filename, const xmlChar* attribute);
 
 #endif

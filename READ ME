@@ -1,0 +1,15 @@
+FOLDERS:
+
+- app_db - some applications create its own permissions, this folder will contain all the permission by application
+
+- main_db - this folder contains all Android System standard features like permissions and actions
+
+- src - Source Code
+
+- inc - include headers
+
+- info - Main information retrieved from a xml file, this will be sorted by application
+
+How to run:
+Run the runner.sh file, see if you need to compile or not (careful, info folder will be erased)
+

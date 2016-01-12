@@ -53,7 +53,7 @@ $(MAIN):
 
 clean:
 		$(RM) *~ $(MAIN)
-
+		echo "Executable File removed!"
 removeinfo:
 		$(RM) $(INFODIR)/*
 		@echo "Info Files removed!"

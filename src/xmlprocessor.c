@@ -37,10 +37,11 @@ static void processNode(xmlTextReaderPtr reader) {
 	name = BAD_CAST "--";
     
     if(strcmp((char*)name,"uses-permission")==0)
-        process_usespermission();
-    else if (strcmp((char*)name,"intent-filter")==0){
-        process_intentfilter(reader,name);
-    }
+        process_usespermission(reader,filename);
+    else if (strcmp((char*)name,"intent-filter")==0)
+        process_intentfilter(reader,filename);
+        else if (strcmp((char*)name,"manifest")==0)
+            process_manifest(reader);
     
 }
 
