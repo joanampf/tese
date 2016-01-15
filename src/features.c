@@ -4,7 +4,7 @@
 	considered to post avaliation			*/
 #include "../inc/features.h"
 
-xmlChar *filename;
+const xmlChar *filename;
 
 /*	Its important to analyse INTENT-FILTER.
 	Contained in:
@@ -18,15 +18,35 @@ xmlChar *filename;
 		<category>
 		<data>								*/
 
-void process_intentfilter(xmlTextReaderPtr reader,const xmlChar *name){
-	saveToFile(name, xmlTextReaderReadInnerXml(reader));
+//this will name the file by application
+void processManifest(xmlTextReaderPtr reader){
+
+	const xmlChar* atribute = (const xmlChar*)"package";
+
+	filename = xmlTextReaderGetAttribute(reader,atribute);
+}
+
+void processIntentFilter(xmlTextReaderPtr reader,const xmlChar *filename){
+
+	const xmlChar* node= xmlTextReaderConstName(reader);
+	const xmlChar* atribute= xmlTextReaderReadInnerXml(reader);
+	char input[strlen((char*)node)+strlen((char*)atribute)+4];
+
+	snprintf(input, sizeof(input), "%s - %s",(char*)node,(char*)atribute);
+
+	saveToFile(filename, input);
 	
 }
 
-void process_usespermission(xmlTextReaderPtr reader,const xmlChar *name){
-	saveToFile(name, xmlTextReaderGetAttribute(reader,"android:name"));
+void processUsesPermission(xmlTextReaderPtr reader,const xmlChar *filename){
+	
+	const xmlChar* node= xmlTextReaderConstName(reader);
+	const xmlChar* atribute= xmlTextReaderGetAttribute(reader,(const xmlChar*)"android:name");
+	char input[strlen((char*)node)+strlen((char*)atribute)+4];
+
+	snprintf(input, sizeof(input), "%s - %s",(char*)node,(char*)atribute);
+
+	saveToFile(filename,input);
 }
 
-void process_manifest(reader){
-	filename = xmlTextReaderGetAttribute(reader,"package");
-}
+void processActivity
