@@ -8,8 +8,9 @@
 
 extern const xmlChar *filename; 
 
-void process_usespermission();
-void process_intentfilter(xmlTextReaderPtr reader,const xmlChar *name);
-void process_manifest(xmlTextReaderPtr reader);
+void processUsesPermission(xmlTextReaderPtr reader,const xmlChar *filename);
+void processIntentFilter(xmlTextReaderPtr reader,const xmlChar *filename);
+void processManifest(xmlTextReaderPtr reader);
+void processApplication(xmlTextReaderPtr reader,const xmlChar *filename);
 
 #endif

@@ -32,9 +32,10 @@ void processIntentFilter(xmlTextReaderPtr reader,const xmlChar *filename){
 	const xmlChar* atribute= xmlTextReaderReadInnerXml(reader);
 	char input[strlen((char*)node)+strlen((char*)atribute)+4];
 
-	snprintf(input, sizeof(input), "%s - %s",(char*)node,(char*)atribute);
-
-	saveToFile(filename, input);
+	if (strcmp((char*)atribute, "")!=0){
+		snprintf(input, sizeof(input), "%s - %s",(char*)node,(char*)atribute);
+		saveToFile(filename, input);
+	}
 	
 }
 
@@ -49,4 +50,21 @@ void processUsesPermission(xmlTextReaderPtr reader,const xmlChar *filename){
 	saveToFile(filename,input);
 }
 
-void processActivity
+void processApplication(xmlTextReaderPtr reader,const xmlChar *filename){
+	
+	const xmlChar* node= xmlTextReaderConstName(reader);
+	const xmlChar* atribute = (const xmlChar*)"";
+	int nAttribute=0;
+	char input[strlen((char*)node)+strlen((char*)atribute)+4];
+
+	while(xmlTextReaderGetAttributeNo(reader, nAttribute)!=NULL){
+		printf("%s\n",xmlTextReaderGetAttributeNo(reader, nAttribute));
+		atribute = xmlTextReaderGetAttributeNo(reader,nAttribute);
+		snprintf(input, sizeof(input), "%s - %s",(char*)node,(char*)atribute);
+		saveToFile(filename,input);
+		nAttribute++;
+	}
+}
+
+
+
