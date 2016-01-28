@@ -36,14 +36,16 @@ static void processNode(xmlTextReaderPtr reader) {
     if (name == NULL)
 	name = BAD_CAST "--";
     
-    if(strcmp((char*)name,"uses-permission")==0)
+    if(strstr((char*)name,"uses-permission")!=NULL)
         processUsesPermission(reader,filename);
-    else if (strcmp((char*)name,"intent-filter")==0)
+    else if (strstr((char*)name,"intent-filter")!=NULL)
         processIntentFilter(reader,filename);
-        else if (strcmp((char*)name,"manifest")==0)
+        else if (strstr((char*)name,"manifest")!=NULL)
             processManifest(reader);
-            else if (strcmp((char*)name,"activity")==0)
+            else if (strstr((char*)name,"application")!=NULL)
                 processApplication(reader,filename);
+            else if(strstr((char*)name,"uses-library")!=NULL)
+                processUsesLibrary(reader,filename);
     
 }
 

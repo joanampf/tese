@@ -11,7 +11,7 @@ read asr
 if [ "$asr" == "y" ]; then
 	if [ -f getAMinfo ]; then
 	    echo "File Clean"
-	    exec'\E[1;35m' make cleanall 
+	    make cleanall 
 	fi
 
 echo -e '\E[1;32m' "Compiling Project"

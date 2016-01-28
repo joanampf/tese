@@ -12,5 +12,6 @@ void processUsesPermission(xmlTextReaderPtr reader,const xmlChar *filename);
 void processIntentFilter(xmlTextReaderPtr reader,const xmlChar *filename);
 void processManifest(xmlTextReaderPtr reader);
 void processApplication(xmlTextReaderPtr reader,const xmlChar *filename);
+void processUsesLibrary(xmlTextReaderPtr reader,const xmlChar *filename);
 
 #endif
