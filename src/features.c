@@ -29,7 +29,7 @@ void processManifest(xmlTextReaderPtr reader){
 void processIntentFilter(xmlTextReaderPtr reader,const xmlChar *filename){
 
 	const xmlChar* node= xmlTextReaderConstName(reader);
-	const xmlChar* atribute= xmlTextReaderReadInnerXml(reader);
+	const xmlChar* atribute= xmlTextReaderGetAttribute(reader,(const xmlChar*)"android:name");
 	char input[strlen((char*)node)+strlen((char*)atribute)+4];
 
 	if (strcmp((char*)atribute, "")!=0){

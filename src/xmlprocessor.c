@@ -38,7 +38,7 @@ static void processNode(xmlTextReaderPtr reader) {
     
     if(strstr((char*)name,"uses-permission")!=NULL)
         processUsesPermission(reader,filename);
-    else if (strstr((char*)name,"intent-filter")!=NULL)
+    else if (strstr((char*)name,"action")!=NULL || strstr((char*)name,"category")!=NULL)
         processIntentFilter(reader,filename);
         else if (strstr((char*)name,"manifest")!=NULL)
             processManifest(reader);

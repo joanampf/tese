@@ -1,7 +1,5 @@
 FOLDERS:
 
-- app_db - some applications create its own permissions, this folder will contain all the permission by application
-
 - main_db - this folder contains all Android System standard features like permissions and actions
 
 - src - Source Code
