@@ -98,6 +98,8 @@ int main(int argc, char **argv) {
      */
     xmlMemoryDump();
     return(0);
+
+    createArFile();
 }
 
 #else
