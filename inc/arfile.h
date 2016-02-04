@@ -4,12 +4,14 @@
 #include <stdio.h>
 #include <string.h>
 
-struct App {
-   int permissions[134];
-   int actions[33];
-   int category[16];
+typedef struct App {
+   int *permissions;
+   int *actions;
+   int *category;
    int *libs;
 } app;
+
+
 
 
 

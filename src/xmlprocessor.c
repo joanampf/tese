@@ -97,9 +97,11 @@ int main(int argc, char **argv) {
      * this is to debug memory for regression tests
      */
     xmlMemoryDump();
-    return(0);
 
     createArFile();
+    return(0);
+
+    
 }
 
 #else
