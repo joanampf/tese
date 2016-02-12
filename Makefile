@@ -14,8 +14,11 @@ INCLUDES = -I/usr/include/libxml2  -I../inc
 LIBS = -lxml2
 
 INFODIR = info
+DIR = src
 # define the C source files
-SRCS = src/*.c
+SRCS1 = src/savetofile.c src/features.c src/createInfo.c
+
+SRCS2 = src/arfile.c src/analyseinfo.c
 
 # define the C object files 
 #
@@ -25,10 +28,12 @@ SRCS = src/*.c
 # Below we are replacing the suffix .c of all words in the macro SRCS
 # with the .o suffix
 #
-#OBJS = $(SRCS:.c=.o)
-
+OBJS1 = $(SRCS1:.c=.o)
+OBJS2 = $(SRCS2:.c=.o)
 # define the executable file 
-MAIN = getAMinfo
+MAIN1 = getAMinfo
+
+MAIN2 = createDB
 
 #
 # The following part of the makefile is generic; it can be used to 
@@ -38,11 +43,14 @@ MAIN = getAMinfo
 
 .PHONY: depend clean
 
-all:    $(MAIN)
-		@echo  Simple compiler named getAMinfo has been compiled
+all:    $(MAIN1) $(MAIN2)
+		@echo  Simple compiler named getAMinfo and createDB have been compiled
 
-$(MAIN):
-		$(CC) $(CFLAGS) $(INCLUDES) -o $(MAIN) $(SRCS) $(LFLAGS) $(LIBS)
+$(MAIN1): $(OBJS1)
+		$(CC) $(CFLAGS) $(INCLUDES) -o $(MAIN1) $(OBJS1) $(LIBS)
+
+$(MAIN2): $(OBJS2)
+		$(CC) $(CFLAGS) $(INCLUDES) -o $(MAIN2) $(OBJS2)
 
 # this is a suffix replacement rule for building .o's from .c's
 # it uses automatic variables $<: the name of the prerequisite of
@@ -52,10 +60,11 @@ $(MAIN):
 		$(CC) $(CFLAGS) $(INCLUDES) -c $<  -o $@
 
 clean:
-		$(RM) *~ $(MAIN)
+		$(RM) *~ $(MAIN1) *~ $(MAIN2)
 		echo "Executable File removed!"
 removeinfo:
 		$(RM) $(INFODIR)/*
+		$(RM) *~ src/*.o
 		@echo "Info Files removed!"
 
 cleanall: clean removeinfo

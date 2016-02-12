@@ -1,21 +1,16 @@
-/********************************************/
-/*	ArFile visa gerar um ficheiro do tipo   
-	arf para que se possaincluir no programa 
-	weka*/
-#include "../inc/arfile.h"
 
-void fillStructure(app data, FILE *file){
-	
-	char buf[256];
-	while (fgets (buf, sizeof(buf), file)) {
-		printf("line: %s", buf);
-	}
-  
-}
+#include <stdio.h>
+#include <string.h>
+
+#include "../inc/analyseinfo.h"
 
 void createArFile(){
 
+}
 
+int main(int argc, char **argv) {
+    if (argc != 2)
+        return(1);
 
-
+    return(0);
 }

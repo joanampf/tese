@@ -5,10 +5,6 @@
  *          and dump the informations about the nodes found in the process.
  *          (Note that the XMLReader functions require libxml2 version later
  *          than 2.6.)
- * usage: reader1 <filename>
- * test: reader1 test2.xml > reader1.tmp && diff reader1.tmp $(srcdir)/reader1.res
- * author: Daniel Veillard
- * copy: see Copyright for the status of this software.
  */
 
 #include <stdio.h>
@@ -16,7 +12,7 @@
 #include <libxml/xmlreader.h>
 
 #include "../inc/savetofile.h"
- #include "../inc/features.h"
+#include "../inc/features.h"
 #ifdef LIBXML_READER_ENABLED
 
 /**
@@ -29,9 +25,6 @@ static void processNode(xmlTextReaderPtr reader) {
     const xmlChar *name;
 
     name = xmlTextReaderConstName(reader);
-
-    
-
     
     if (name == NULL)
 	name = BAD_CAST "--";
@@ -97,11 +90,7 @@ int main(int argc, char **argv) {
      * this is to debug memory for regression tests
      */
     xmlMemoryDump();
-
-    createArFile();
     return(0);
-
-    
 }
 
 #else

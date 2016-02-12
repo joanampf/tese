@@ -48,6 +48,8 @@ void processUsesPermission(xmlTextReaderPtr reader,const xmlChar *filename){
 	snprintf(input, sizeof(input), "%s - %s",(char*)node,(char*)atribute);
 
 	saveToFile(filename,input);
+
+	
 }
 
 void processUsesLibrary(xmlTextReaderPtr reader,const xmlChar *filename){

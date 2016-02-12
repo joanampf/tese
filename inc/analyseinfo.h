@@ -12,7 +12,7 @@ typedef struct App {
 } app;
 
 
-
+int checkDB (char* filepath, char* input);
 
 
 #endif
