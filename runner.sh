@@ -22,6 +22,8 @@ fi
 
 ./getAMinfo AndroidManifest.xml
 
+./createDB Info/com.whatsapp.txt
+
 echo -e '\E[1;32m' "Finished Execution"
 tput sgr0
 

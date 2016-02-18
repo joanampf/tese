@@ -33,24 +33,33 @@ return 0;
 }
 
 
-void fillStructure(app data, char* filepath){
+void fillStructure(app * data, char* filepath){
 	
 	//Permissions
 	FILE * fpdata;
 	FILE * fpDB;
     char * line = NULL;
     size_t len = 0;
-    ssize_t read;
+    size_t read;
+    //char * path = "Info/com.whatsapp.txt";
 
     fpdata = fopen(filepath, "r");
+    if (fpdata == NULL){
+    	perror("error");
+        exit(EXIT_FAILURE);
+    }
 
-    fpDB = fopen("mainDB/permissionsDB", "r");
+    //fpDB = fopen("mainDB/permissionsDB", "r");
 
     while ((read = getline(&line, &len, fpdata)) != -1) {
-        printf("Retrieved line of length %zu :\n", read);
-        printf("%s", line);
+        printf("*%s", line);
         line=strtok(line," - ");
-        printf("%s", line);
+        printf("**%s", line);
+        if(strcmp("action",line)==0){
+         	line=strtok(NULL," - ");
+         	printf("***%s", line);
+         	//checkDB("mainDB/actionsDB", line);
+        }
     }
 
 }

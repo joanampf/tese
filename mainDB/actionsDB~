@@ -1,0 +1,16 @@
+
+
+android.intent.action.MAIN
+
+android.intent.action.SENDTO
+
+android.intent.action.ATTACH_DATA
+
+android.intent.action.VIEW
+
+android.intent.action.PICK
+
+android.intent.action.SEND
+
+android.intent.action.SEND_MULTIPLE
+
