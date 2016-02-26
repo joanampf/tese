@@ -13,7 +13,7 @@ INCLUDES = -I/usr/include/libxml2  -I../inc
 #   option, something like (this will link in libmylib.so and libm.so:
 LIBS = -lxml2
 
-INFODIR = info
+INFODIR = Info
 DIR = src
 # define the C source files
 SRCS1 = src/savetofile.c src/features.c src/createInfo.c
@@ -60,11 +60,12 @@ $(MAIN2): $(OBJS2)
 		$(CC) $(CFLAGS) $(INCLUDES) -c $<  -o $@
 
 clean:
-		$(RM) *~ $(MAIN1) *~ $(MAIN2)
+		$(RM) $(MAIN1) 
+		$(RM) $(MAIN2)
 		echo "Executable File removed!"
 removeinfo:
 		$(RM) $(INFODIR)/*
-		$(RM) *~ src/*.o
+		$(RM) src/*.o
 		@echo "Info Files removed!"
 
 cleanall: clean removeinfo

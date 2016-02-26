@@ -4,62 +4,63 @@
 	weka*/
 #include "../inc/analyseinfo.h"
 
-int checkDB (char* filepath, char* input){
 
-	FILE *fp;
-	int line_num=1;
-	int find_result=0; //0 if not found e 1 if found
-	char temp[512];
+	//CheckDB - Returns -1 if not present and ID if present in db
 
-	if((fp = fopen(filepath, "r")) == NULL) {
-		return(-1);
-	}
+int checkDB (char* input){
 
-	while(fgets(temp, 512, fp) != NULL) {
-		if((strstr(temp, input)) != NULL) {
-			fclose(fp);
-			return line_num;
-		}
-		line_num++;
-	}
-fclose(fp);
-fp = fopen(filepath, "a");
+int i=0;
 
-fprintf(fp, "%s\n", input);
-fclose(fp);
-return 0;
+  while (featuresDB[i] != NULL) {
+        printf("features checkDB: %s", featuresDB[i]);
+        printf("Input checkDB: %s\n", input);
 
+        if(strcmp(featuresDB[i],input) == 0)
+        	return i;
+        i++;
+        printf("Resulado compara:%d\n", i);
+        printf("features checkDBfinal: %s\n", featuresDB[i]);	    	
+          }
+i++;
+printf("%d",i);
+featuresDB = (char**) realloc(featuresDB,(i+1)*sizeof(char*));
+featuresDB[i-1]= (char*) malloc (100*sizeof(char));
+strcpy(featuresDB[i-1], input);
+featuresDB[i]=NULL;
+printf("After:%s", featuresDB[i-1]);
 
+return i;
 }
 
 
-void fillStructure(app * data, char* filepath){
+void createList(char* filepath){
 	
-	//Permissions
 	FILE * fpdata;
-	FILE * fpDB;
     char * line = NULL;
     size_t len = 0;
     size_t read;
+    int position=0;
+    int length=0;
     //char * path = "Info/com.whatsapp.txt";
 
     fpdata = fopen(filepath, "r");
     if (fpdata == NULL){
-    	perror("error");
+    	perror("error createList");
         exit(EXIT_FAILURE);
     }
 
-    //fpDB = fopen("mainDB/permissionsDB", "r");
+    
+    printf("%d\n", length);
+
+    app= (int**) realloc(app,(length+1)*sizeof(int*));
 
     while ((read = getline(&line, &len, fpdata)) != -1) {
-        printf("*%s", line);
-        line=strtok(line," - ");
-        printf("**%s", line);
-        if(strcmp("action",line)==0){
-         	line=strtok(NULL," - ");
-         	printf("***%s", line);
-         	//checkDB("mainDB/actionsDB", line);
-        }
+    
+        line=strtok(line,";");
+     	line=strtok(NULL,";");
+     	printf("***%s", line);
+     	position=checkDB(line);
+     	printf("%s\n", featuresDB[position]);
     }
 
 }

@@ -1,21 +1,17 @@
-#ifndef ARFILE_H_INCLUDED
-#define ARFILE_H_INCLUDED
+#ifndef ANALYSEINFO_H_INCLUDED
+#define ANALYSEINFO_H_INCLUDED
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdbool.h>
 
-typedef struct App {
-   int *permissions;
-   int *actions;
-   int *category;
-   int *libs;
-   struct node * next;
-} app;
+char** featuresDB;
+int **app;
 
 
-int checkDB (char* filepath, char* input);
-void fillStructure(app * data, char* filepath);
+int checkDB (char* input);
+void createList(char* filepath);
 
 
 #endif
