@@ -1,0 +1,1 @@
+sudo git add -A;sudo git commit -m "Project Restructure" -a;git push -u origin master

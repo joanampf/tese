@@ -6,10 +6,6 @@
 #include <string.h>
 #include <stdbool.h>
 
-char** featuresDB;
-int **app;
-
-
 int checkDB (char* input);
 void createList(char* filepath);
 

@@ -64,7 +64,7 @@ clean:
 		$(RM) $(MAIN2)
 		echo "Executable File removed!"
 removeinfo:
-		$(RM) $(INFODIR)/*
+		$(RM) $(INFODIR)/* mainDB/featuresDB
 		$(RM) src/*.o
 		@echo "Info Files removed!"
 

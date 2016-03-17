@@ -4,63 +4,83 @@
 	weka*/
 #include "../inc/analyseinfo.h"
 
-
 	//CheckDB - Returns -1 if not present and ID if present in db
 
-int checkDB (char* input){
+// int checkDB (char* input){
 
-int i=0;
 
-  while (featuresDB[i] != NULL) {
-        printf("features checkDB: %s", featuresDB[i]);
-        printf("Input checkDB: %s\n", input);
 
-        if(strcmp(featuresDB[i],input) == 0)
-        	return i;
-        i++;
-        printf("Resulado compara:%d\n", i);
-        printf("features checkDBfinal: %s\n", featuresDB[i]);	    	
-          }
-i++;
-printf("%d",i);
-featuresDB = (char**) realloc(featuresDB,(i+1)*sizeof(char*));
-featuresDB[i-1]= (char*) malloc (100*sizeof(char));
-strcpy(featuresDB[i-1], input);
-featuresDB[i]=NULL;
-printf("After:%s", featuresDB[i-1]);
-
-return i;
-}
+// return position;
+// }
 
 
 void createList(char* filepath){
 	
-	FILE * fpdata;
-    char * line = NULL;
-    size_t len = 0;
-    size_t read;
-    int position=0;
-    int length=0;
-    //char * path = "Info/com.whatsapp.txt";
+	FILE * fpdata,*fpfeatures;
+    char * line1,*line2 = NULL;
+    char tmp[1] , tmp2[1];
+    size_t len1=0, len2=0;
+    size_t read1,read2;
+    int position=0, i;
+    int control =0;
+    int max_position = 0;
+
+    strcpy(tmp,"");
 
     fpdata = fopen(filepath, "r");
-    if (fpdata == NULL){
+    max_position=strlen(tmp);
+    printf("%d\n", max_position);
+
+    if (fpdata == NULL || fpfeatures==NULL){
     	perror("error createList");
         exit(EXIT_FAILURE);
     }
-
     
-    printf("%d\n", length);
+    while ((read1 = getline(&line1, &len1, fpdata)) != -1) {
+     	printf("***%s", line1);
+     	fpfeatures= fopen("mainDB/featuresDB", "a+");
+     	position=0;
+     	control =0;
+     	 while ((read2 = getline(&line2, &len2, fpfeatures)) != -1) {
+		   	 printf("ENTREI CheckDB1:%s %s\n",line1,line2);
+	           if(strcmp(line1,line2) == 0){
+	           	control =1;
+	          	break;
+	           }
+	          
+	          position++;	    	
+          }
+     	
+     	if (control == 0)
+     	{
+     		fprintf(fpfeatures, "%s",line1);
+     	}
+printf("AQUI:%d %d\n", position, control);
+	strcpy(tmp2, "");
+     	if(position <= max_position){
+     		printf("Cheguei if: %d +++%d+++\n",position, max_position);
+     		tmp[position]="1";
+     	}
+     	else{
 
-    app= (int**) realloc(app,(length+1)*sizeof(int*));
-
-    while ((read = getline(&line, &len, fpdata)) != -1) {
-    
-        line=strtok(line,";");
-     	line=strtok(NULL,";");
-     	printf("***%s", line);
-     	position=checkDB(line);
-     	printf("%s\n", featuresDB[position]);
+     		for (i=max_position; i<(position); i++){
+     			printf("Cheguei else: %d +++%d+++\n",position, i);
+     			strcat(tmp2, "0");
+     			printf("%s", tmp2);
+     			
+     		}
+     		
+     		strcat(tmp2,"1");
+     		strcat(tmp, tmp2);
+     		max_position = strlen(tmp);
+     		//printf("%s\n", tmp);
+     	}
+     	printf("%s\n", tmp);
+fclose(fpfeatures);
     }
-
+    
+   //length = sizeof(app)/sizeof(int*);
+   //app= (int**) realloc(app,(length)*sizeof(int*));
+    
+    fclose(fpdata);
 }
